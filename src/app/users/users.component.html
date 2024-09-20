@@ -1,0 +1,17 @@
+<p-table [value]="users" [paginator]="true" [tableStyle]="{ 'min-width': '50rem' }" [rows]="10">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="login">Username <p-sortIcon field="login"></p-sortIcon></th>
+        <th pSortableColumn="login">Details <p-sortIcon field="login"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{ user.login }}</td>
+        <td>
+          <button pButton type="button" label="Details" [routerLink]="['/users', user.login]"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  
